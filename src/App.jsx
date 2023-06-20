@@ -84,28 +84,34 @@ function App() {
 
   return (
     <>
-      <form onSubmit={handleFormSubmit}>
-        <input
-          value={gallons}
-          type="text"
-          onChange={handleGallonsChange}
-          placeholder="EnterGallons"
-        />
-        <select onChange={handleSelectChange}>
-          <option value="Select Recipe">Select Recipe...</option>
-          {ratioOptions.map((choice) => {
-            return (
-              <option key={choice} value={choice}>
-                {choice}
-              </option>
-            );
-          })}
-        </select>
-        <button type="submit">Calc</button>
-      </form>
-      {formSubmitted && <BucketA bucketA={bucketA} />}
-      {formSubmitted && <BucketB bucketB={bucketB} />}
-      {formSubmitted && <BucketRes bucketRes={bucketRes} />}
+      <main className="container">
+        <form onSubmit={handleFormSubmit}>
+          <label htmlFor="gallons-input">Enter Gallons:</label>
+          <input
+            id="gallons-input"
+            value={gallons}
+            type="text"
+            onChange={handleGallonsChange}
+            placeholder="EnterGallons"
+          />
+          <select onChange={handleSelectChange}>
+            <option value="Select Recipe">Select Recipe...</option>
+            {ratioOptions.map((choice) => {
+              return (
+                <option key={choice} value={choice}>
+                  {choice}
+                </option>
+              );
+            })}
+          </select>
+          <button type="submit">Calc</button>
+        </form>
+        <div className="grid container">
+          {formSubmitted && <BucketA bucketA={bucketA} />}
+          {formSubmitted && <BucketB bucketB={bucketB} />}
+          {formSubmitted && <BucketRes bucketRes={bucketRes} />}
+        </div>
+      </main>
     </>
   );
 }
