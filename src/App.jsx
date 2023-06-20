@@ -94,6 +94,7 @@ function App() {
             onChange={handleGallonsChange}
             placeholder="EnterGallons"
           />
+          <label htmlFor="">Select Recipe:</label>
           <select onChange={handleSelectChange}>
             <option value="Select Recipe">Select Recipe...</option>
             {ratioOptions.map((choice) => {
