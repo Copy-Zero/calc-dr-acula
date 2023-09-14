@@ -15,10 +15,11 @@ function App() {
   const [bucketRes, setBucketRes] = useState([]);
 
   const ratioOptions = [
-    "jacksFull-2EC",
-    "genes-1-7EC",
-    "jacksBase-1-7EC",
-    "jacksSeedling-1EC",
+    "jacksFull 2EC",
+    "genes 1.7EC",
+    "jacksBase 1.7EC",
+    "jacksSeedling 1EC",
+    "jacksStack 2.5EC",
   ];
 
   // Recipe Configuration
@@ -31,25 +32,30 @@ function App() {
     tribus: 1,
     silica: 5,
     setRatio: function (scheme) {
-      if (scheme === "jacksFull-2EC") {
+      if (scheme === "jacksFull 2EC") {
         this.jacksA = 3.6;
         this.calNit = 2.4;
         this.epsom = 1.2;
       }
-      if (scheme === "genes-1-7EC") {
+      if (scheme === "genes 1.7EC") {
         this.jacksA = 4;
         this.calNit = 2;
         this.epsom = 0;
       }
-      if (scheme === "jacksBase-1-7EC") {
+      if (scheme === "jacksBase 1.7EC") {
         this.jacksA = 3;
         this.calNit = 2;
         this.epsom = 1;
       }
-      if (scheme == "jacksSeedling-1EC") {
+      if (scheme === "jacksSeedling 1EC") {
         this.jacksA = 1.8;
         this.calNit = 1.2;
         this.epsom = 0.6;
+      }
+      if (scheme === "jacksStack 2.5EC") {
+        this.jacksA = 4.3;
+        this.calNit = 2.9;
+        this.epsom = 1.5;
       }
     },
     setAmounts: function (gallons) {
